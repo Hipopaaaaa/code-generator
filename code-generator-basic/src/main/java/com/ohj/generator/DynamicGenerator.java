@@ -22,17 +22,6 @@ import java.util.Objects;
  * 动态文件生成器
  */
 public class DynamicGenerator {
-    public static void main(String[] args) throws IOException, TemplateException {
-        String projectPath = System.getProperty("user.dir")+File.separator+"code-generator-basic";
-        String inputPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
-        String outputPath = projectPath + File.separator + "MainTemplate.java";
-
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("ohj");
-        mainTemplateConfig.setOutputText("求和结果：");
-        mainTemplateConfig.setLoop(false);
-        doGenerate(inputPath,outputPath, mainTemplateConfig);
-    }
 
     /**
      * 生成文件

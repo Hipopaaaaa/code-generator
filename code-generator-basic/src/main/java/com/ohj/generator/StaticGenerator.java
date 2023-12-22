@@ -15,14 +15,6 @@ import java.nio.file.StandardCopyOption;
  * 静态文件生成器
  */
 public class StaticGenerator {
-    public static void main(String[] args) {
-        String projectPath = System.getProperty("user.dir");
-        System.out.println(projectPath);
-        String inputPath = projectPath+ File.separator+ "code-generator-demo-projects" + File.separator + "acm-template";
-        String outputPath = projectPath;
-        //copyFilesByHutool(inputPath,outputPath);
-        copyFilesByRecursive(inputPath,outputPath);
-    }
 
     /**
      * 拷贝文件
