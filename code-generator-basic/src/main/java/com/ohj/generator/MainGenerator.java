@@ -12,19 +12,26 @@ import java.io.IOException;
  */
 public class MainGenerator {
      public static void doGenerate(Object model) throws TemplateException, IOException {
+
+          String inputRootPath="/Users/hipopaaaa/Desktop/code-generator/code-generator/code-generator-demo-projects/acm-template-pro";
+          String outputRootPath="/Users/hipopaaaa/Desktop/code-generator";
+
+          String inputPath;
+          String outputPath;
+          inputPath=new File(inputRootPath,"src/main/resources/templates/MainTemplate.java.ftl").getAbsolutePath();
+          outputPath=new File(outputRootPath,"src/com/ohj/acm/MainTemplate.java").getAbsolutePath();
+          // 动态文件生成
+          DynamicGenerator.doGenerate(inputPath,outputPath, model);
+
+          inputPath=new File(inputRootPath,".gitignore").getAbsolutePath();
+          outputPath=new File(outputRootPath,".gitignore").getAbsolutePath();
           // 静态文件生成
-          String projectPath = System.getProperty("user.dir");
-          File parentFile = new File(projectPath).getParentFile();
-
-          String inputPath = new File(parentFile,"code-generator-demo-projects" + File.separator + "acm-template").getAbsolutePath();
-
-          String outputPath = projectPath;
           StaticGenerator.copyFilesByRecursive(inputPath,outputPath);
 
-          // 动态文件生成
-          String dynamicInputPath = projectPath +File.separator+"src/main/resources/templates/MainTemplate.java.ftl";
-          String dynamicOutputPath = projectPath + File.separator + "acm-template/src/com/ohj/acm/MainTemplate.java";
+          inputPath=new File(inputRootPath,"README.md").getAbsolutePath();
+          outputPath=new File(outputRootPath,"README.md").getAbsolutePath();
+          // 静态文件生成
+          StaticGenerator.copyFilesByRecursive(inputPath,outputPath);
 
-          DynamicGenerator.doGenerate(dynamicInputPath,dynamicOutputPath, model);
      }
 }
