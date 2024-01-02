@@ -6,8 +6,9 @@
   "author": "ohj",
   "createTime": "2023-11-22",
   "fileConfig": {
-    "inputRootPath": "/Users/hipopaaaa/Desktop/code-generator/code-generator/code-generator-demo-projects/acm-template-pro",
+    "inputRootPath": ".source/acm-template-pro",
     "outputRootPath": "generated",
+    "sourceRootPath": "/Users/hipopaaaa/Desktop/code-generator/code-generator/code-generator-demo-projects/acm-template-pro",
     "type": "dir",
     "files": [
       {
