@@ -9,25 +9,24 @@ import lombok.Data;
  */
 @Data
 public class DataModel {
+
     /**
-     * 动态生成需求：
-     * 1.在代码开头增加@Author 注释(增加代码)
-     * 2.修改程序输出的信息提示(修改代码)
-     * 3.将循环读取输入改为单词读取(可选代码)
+     * 是否生成.gitignore文件
      */
+    public boolean needGit =true;
 
     /**
      * 作者
      */
-    private String author = "Hipop";
+    public String author = "Hipop";
 
     /**
      * 输出信息
      */
-    private String outputText = "输出结果";
+    public String outputText = "输出结果";
 
     /**
      * 是否循环
      */
-    private boolean loop;
+    public boolean loop;
 }
