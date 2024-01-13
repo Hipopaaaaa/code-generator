@@ -64,7 +64,7 @@ public class MetaValidator {
 
     private static void validAndFillFileConfig(Meta meta) {
         // fileConfig 校验和默认值
-        Meta.FileConfigDTO fileConfig = meta.getFileConfig();
+        Meta.FileConfig fileConfig = meta.getFileConfig();
         if (fileConfig == null) {
             return;
         }
@@ -91,11 +91,11 @@ public class MetaValidator {
             fileConfig.setType(FileTypeEnum.DIR.getValue());
         }
 
-        List<Meta.FileConfigDTO.FileInfo> fileInfoList = fileConfig.getFiles();
+        List<Meta.FileConfig.FileInfo> fileInfoList = fileConfig.getFiles();
         if (CollUtil.isEmpty(fileInfoList)) {
             return;
         }
-        for (Meta.FileConfigDTO.FileInfo fileInfo : fileInfoList) {
+        for (Meta.FileConfig.FileInfo fileInfo : fileInfoList) {
             String type = fileInfo.getType();
             if (FileTypeEnum.GROUP.getValue().equals(type)) {
                 continue;
